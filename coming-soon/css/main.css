@@ -1,0 +1,1158 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+html {
+  font-size: 1em;
+  line-height: 1.4;
+}
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle;
+}
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: none;
+}
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/*------------------------------------------------------------------
+
+Split Coming Soon Page Stylesheet
+Last update: 10/27/2014 18:31 (UTC+03:30)
+
+------------============= Table Of Contents ============------------
+
+1. Define Some less variables
+2. Define less mixins
+3. Create Animations
+4. Attaching Fonts
+5. Define some general styles
+6. Style the preloader
+7. Style mani-header
+8. Style home
+9. Style countdown
+10. Style morph buttons
+11. IE9 Specefic codes
+12. Media queries
+
+------------============= Color Codes ============------------
+
+#First-Color: #e25050; // Home main color
+#Second-Color: white; // Countdown main color
+#Third-Color: #556270;
+
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+____________________________________________________________________
+********************************************************************
+------------================ 1.Variables ================------------
+____________________________________________________________________
+********************************************************************
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+____________________________________________________________________
+********************************************************************
+------------================= 2.Mixins =================------------
+____________________________________________________________________
+********************************************************************
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+____________________________________________________________________
+********************************************************************
+------------=============== 3.Animations ===============------------
+____________________________________________________________________
+********************************************************************
+-------------------------------------------------------------------*/
+@-webkit-keyframes dotsFirst {
+  0% {
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+  50% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes dotsFirst {
+  0% {
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+  50% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes dotsLast {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+@keyframes dotsLast {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+/*------------------------------------------------------------------
+____________________________________________________________________
+********************************************************************
+------------================= 4.Fonts =================------------
+____________________________________________________________________
+********************************************************************
+-------------------------------------------------------------------*/
+@font-face {
+  font-family: 'open_sanslight';
+  src: url('../fonts/opensans-light-webfont.eot');
+  src: url('../fonts/opensans-light-webfont.eot@#iefix') format('embedded-opentype'), url('../fonts/opensans-light-webfont.woff') format('woff'), url('../fonts/opensans-light-webfont.ttf') format('truetype'), url('../fonts/opensans-light-webfont.svg#open_sanslight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'open_sanssemibold';
+  src: url('../fonts/opensans-semibold-webfont.eot');
+  src: url('../fonts/opensans-semibold-webfont.eot@#iefix') format('embedded-opentype'), url('../fonts/opensans-semibold-webfont.woff') format('woff'), url('../fonts/opensans-semibold-webfont.ttf') format('truetype'), url('../fonts/opensans-semibold-webfont.svg#open_sanssemibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'open_sansbold';
+  src: url('../fonts/opensans-bold-webfont.eot');
+  src: url('../fonts/opensans-bold-webfont.eot@#iefix') format('embedded-opentype'), url('../fonts/opensans-bold-webfont.woff2') format('woff2'), url('../fonts/opensans-bold-webfont.woff') format('woff'), url('../fonts/opensans-bold-webfont.ttf') format('truetype'), url('../fonts/opensans-bold-webfont.svg#open_sansbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*------------------------------------------------------------------
+____________________________________________________________________
+********************************************************************
+------------============ 5.General Styles =============------------
+____________________________________________________________________
+********************************************************************
+-------------------------------------------------------------------*/
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: open_sanslight, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  background: #444;
+  overflow-x: hidden;
+  min-width: 320px;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+section {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+  -webkit-transition: 0.3s 0.001s all cubic-bezier(0.7, 0, 0.3, 1);
+  -moz-transition: 0.3s 0.001s all cubic-bezier(0.7, 0, 0.3, 1);
+  transition: 0.3s 0.001s all cubic-bezier(0.7, 0, 0.3, 1);
+}
+section .contents {
+  position: relative;
+  z-index: 10;
+}
+section .contents h1 {
+  font-family: open_sansbold;
+  font-size: 68px;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+#home,
+#countdown {
+  text-align: center;
+  cursor: default;
+  overflow-y: visible;
+}
+#home .contents,
+#countdown .contents {
+  padding-top: 21%;
+}
+#home.active .contents,
+#countdown.active .contents {
+  cursor: default;
+}
+#home.inactive,
+#countdown.inactive {
+  cursor: pointer;
+}
+input,
+textarea,
+button {
+  font-family: open_sanslight;
+}
+/*------------------------------------------------------------------
+____________________________________________________________________
+********************************************************************
+------------=============== 6.Preloader ================------------
+____________________________________________________________________
+********************************************************************
+-------------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #556270;
+  z-index: 9999999;
+}
+#preloader .preloader-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+#preloader .preloader-container .pendulum .dot {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  border-radius: 50em;
+}
+#preloader .preloader-container .pendulum .dot:first-child {
+  -webkit-animation: dotsFirst 1s ease-in infinite alternate;
+  animation: dotsFirst 1s ease-in infinite alternate;
+}
+#preloader .preloader-container .pendulum .dot:last-child {
+  -webkit-animation: dotsLast 1s ease-out infinite alternate;
+  animation: dotsLast 1s ease-out infinite alternate;
+}
+#preloader .preloader-container img {
+  width: 50px;
+  height: 50px;
+}
+/*------------------------------------------------------------------
+____________________________________________________________________
+********************************************************************
+------------=============== 7.Main Header ===============-----------
+____________________________________________________________________
+********************************************************************
+-------------------------------------------------------------------*/
+#main-header {
+  position: absolute;
+  top: 3em;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
+  z-index: 100;
+}
+/*------------------------------------------------------------------
+____________________________________________________________________
+********************************************************************
+------------================= 8.Home =================-------------
+____________________________________________________________________
+********************************************************************
+-------------------------------------------------------------------*/
+#home {
+  background: url(../img/bg1.jpg);
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: block;
+  width: 100%;
+}
+#home:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: #2F4F4F;
+  opacity: 0.85;
+}
+/*------------------------------------------------------------------
+____________________________________________________________________
+********************************************************************
+------------================ 9.Countdow ================------------
+____________________________________________________________________
+********************************************************************
+-------------------------------------------------------------------*/
+#countdown {
+  background: url(../img/bg1.jpg);
+  color: #2F4F4F;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: block;
+  width: 100%;
+}
+#countdown:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: #ffffff;
+  opacity: 0.85;
+}
+#countdown .countdown-timer li {
+  font-family: open_sansbold;
+  color: #556270;
+}
+#countdown .countdown-timer li span {
+  font-size: 70px;
+}
+#countdown .countdown-timer li p {
+  font-family: open_sansbold;
+  display: inline-block;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+#countdown .socials {
+  text-align: center;
+  position: absolute;
+  bottom: 3em;
+  left: 50%;
+  z-index: 999;
+  width: 100%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+#countdown .socials li {
+  display: inline-block;
+  position: relative;
+  margin-left: 20px;
+  text-align: center;
+}
+#countdown .socials li a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  color: #556270;
+  position: relative;
+  -webkit-transition: 0.1s 0.001s all cubic-bezier(0.7, 0, 0.3, 1);
+  -moz-transition: 0.1s 0.001s all cubic-bezier(0.7, 0, 0.3, 1);
+  transition: 0.1s 0.001s all cubic-bezier(0.7, 0, 0.3, 1);
+}
+#countdown .socials li a:before {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: transparent;
+  border: 2px solid #556270;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.2s 0.001s all cubic-bezier(0.7, 0, 0.3, 1);
+  -moz-transition: 0.2s 0.001s all cubic-bezier(0.7, 0, 0.3, 1);
+  transition: 0.2s 0.001s all cubic-bezier(0.7, 0, 0.3, 1);
+  border-radius: 50em;
+}
+#countdown .socials li a:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #e25050;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: 0.2s 0.001s all cubic-bezier(0.7, 0, 0.3, 1);
+  -moz-transition: 0.2s 0.001s all cubic-bezier(0.7, 0, 0.3, 1);
+  transition: 0.2s 0.001s all cubic-bezier(0.7, 0, 0.3, 1);
+  border-radius: 50em;
+}
+#countdown .socials li a i {
+  font-size: 1.5em;
+  line-height: 2.2em;
+}
+#countdown .socials li a:hover {
+  color: #ffffff;
+}
+#countdown .socials li a:hover:before {
+  -webkit-transform: scale(1.6);
+  -moz-transform: scale(1.6);
+  -ms-transform: scale(1.6);
+  transform: scale(1.6);
+  opacity: 0;
+}
+#countdown .socials li a:hover:after {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+a {  
+  text-decoration: none;
+  color: inherit;
+} 
+a:hover 
+{
+     color:inherit;
+     text-decoration:none; 
+     cursor:pointer;  
+}
+/*------------------------------------------------------------------
+____________________________________________________________________
+********************************************************************
+------------============= 10.Morph Buttons =============------------
+____________________________________________________________________
+********************************************************************
+-------------------------------------------------------------------*/
+.morph-button {
+  position: relative;
+  width: 270px;
+  height: 70px;
+  display: inline-block;
+  margin: 0 10px 30px;
+}
+.morph-button:before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 800;
+  width: 100%;
+  height: 100%;
+  background: #556270;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+.morph-button > button {
+  font-family: open_sansbold;
+  font-size: 20px;
+  text-transform: uppercase;
+  position: relative;
+  border: none;
+  background-color: #ffffff;
+  color: #556270;
+  overflow: hidden;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity 0.1s 0.5s, background 0.2s, color 0.2s;
+  transition: opacity 0.1s 0.5s, background 0.2s, color 0.2s;
+}
+.morph-button > button:hover {
+  background: #2F4F4F;
+  color: #ffffff;
+}
+.morph-button .morph-content {
+  pointer-events: none;
+  width: 270px;
+  height: 70px;
+  position: fixed;
+  z-index: 900;
+  opacity: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  color: #556270;
+  -webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+  transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+.morph-button .morph-content > div {
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
+  transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
+}
+.morph-button .morph-content .form-content {
+  position: relative;
+  text-align: left;
+}
+.morph-button .morph-content .form-content .icon-close {
+  display: block;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+.morph-button .morph-content .form-content .icon-close i {
+  font-size: 1.5em;
+  color: #ebd3bd;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.morph-button .morph-content .form-content .icon-close i:hover {
+  color: #e25050;
+}
+.morph-button .morph-content .form-content h2 {
+  font-family: open_sansbold;
+  font-size: 42px;
+  text-transform: uppercase;
+  margin: 0.5em 0;
+  text-align: center;
+}
+.morph-button .morph-content .form-content form {
+  padding: 10px 30px;
+}
+.morph-button .morph-content .form-content form input,
+.morph-button .morph-content .form-content form textarea,
+.morph-button .morph-content .form-content form button {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.morph-button .morph-content .form-content form input,
+.morph-button .morph-content .form-content form textarea {
+  font-size: 20px !important;
+  padding: 16px;
+  width: 100%;
+  border: 2px solid #ebd3bd;
+  color: #b09a86;
+  -webkit-transition: 0.3s 0.001s all cubic-bezier(0.7, 0, 0.3, 1);
+  -moz-transition: 0.3s 0.001s all cubic-bezier(0.7, 0, 0.3, 1);
+  transition: 0.3s 0.001s all cubic-bezier(0.7, 0, 0.3, 1);
+}
+.morph-button .morph-content .form-content form input:focus,
+.morph-button .morph-content .form-content form textarea:focus {
+  border-color: #e75854;
+  color: #556270;
+  outline: 0;
+}
+.morph-button .morph-content .form-content form label {
+  font-family: open_sansbold;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  color: #d5bba4;
+  letter-spacing: 1px;
+}
+.morph-button .morph-content .form-content form button {
+  font-family: open_sansbold;
+  font-size: 20px;
+  text-transform: uppercase;
+  display: block;
+  padding: 1em;
+  width: 100%;
+  border: none;
+  background: #e75854;
+  color: #f9f6e5;
+}
+.morph-button .morph-content .form-content form button:hover {
+  background: #556270;
+}
+.morph-button .morph-content .form-content .statusMessage {
+  font-family: open_sansbold;
+  font-size: 16px;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: #556270;
+  display: none;
+}
+.morph-button .morph-content .form-content .statusMessage#successMessage {
+  color: #2ecc9a;
+}
+.morph-button .morph-content .form-content .statusMessage#failureMessage {
+  color: #e25050;
+}
+.morph-button .morph-content .form-content .statusMessage#incompleteMessage {
+  color: #e39036;
+}
+.morph-button.open:before {
+  opacity: 0.7;
+  pointer-events: auto;
+}
+.morph-button.open > button {
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.1s;
+  transition: opacity 0.1s;
+}
+.morph-button.open .morph-content {
+  pointer-events: auto;
+  opacity: 1;
+  top: 50% !important;
+  left: 50% !important;
+  margin: -210px 0 0 -300px;
+  width: 600px;
+  height: 420px;
+  -webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+  transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+.morph-button.open .morph-content > div {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s 0.5s;
+  transition: opacity 0.3s 0.5s;
+}
+.morph-button.active:before {
+  z-index: 1800;
+}
+.morph-button.active > button {
+  z-index: 2000;
+}
+.morph-button.active .morph-content {
+  z-index: 1900;
+}
+.morph-button.subscribe-form-container .form-content h2 {
+  -webkit-transition-delay: 0.35s;
+  transition-delay: 0.35s;
+}
+.morph-button.subscribe-form-container .form-content input {
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+.morph-button.subscribe-form-container .form-content button {
+  -webkit-transition-delay: 0.45s;
+  transition-delay: 0.45s;
+}
+.morph-button.subscribe-form-container .form-content label {
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+.morph-button.subscribe-form-container .form-content h2,
+.morph-button.subscribe-form-container .form-content input,
+.morph-button.subscribe-form-container .form-content button,
+.morph-button.subscribe-form-container .form-content label,
+.morph-button.subscribe-form-container .form-content .icon-close {
+  opacity: 0;
+  -webkit-transition: opacity 0.2s 0.35s, -webkit-transform 0.2s 0.35s, background 0.2s 0;
+  transition: opacity 0.2s 0.35s, transform 0.2s 0.35s, background 0.2s 0;
+  -webkit-transform: scale(0.85);
+  transform: scale(0.85);
+}
+.morph-button.subscribe-form-container.open .morph-content {
+  margin: -202px 0 0 -250px;
+  width: 500px;
+  height: 404px;
+}
+.morph-button.subscribe-form-container.open .morph-content > div {
+  -webkit-transition: opacity 0.3s 0.3s;
+  transition: opacity 0.3s 0.3s;
+}
+.morph-button.subscribe-form-container.open .morph-content .form-content h2,
+.morph-button.subscribe-form-container.open .morph-content .form-content input,
+.morph-button.subscribe-form-container.open .morph-content .form-content button,
+.morph-button.subscribe-form-container.open .morph-content .form-content label,
+.morph-button.subscribe-form-container.open .morph-content .form-content .icon-close {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.morph-button.contact-form-container .form-content h2 {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+.morph-button.contact-form-container .form-content #name {
+  -webkit-transition-delay: 0.35s;
+  transition-delay: 0.35s;
+}
+.morph-button.contact-form-container .form-content #email {
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+.morph-button.contact-form-container .form-content #message {
+  -webkit-transition-delay: 0.45s;
+  transition-delay: 0.45s;
+}
+.morph-button.contact-form-container .form-content #send-message {
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+.morph-button.contact-form-container .form-content h2,
+.morph-button.contact-form-container .form-content input,
+.morph-button.contact-form-container .form-content button,
+.morph-button.contact-form-container .form-content textarea,
+.morph-button.contact-form-container .form-content .icon-close {
+  opacity: 0;
+  -webkit-transition: opacity 0.2s 0.3s, -webkit-transform 0.2s 0.3s, background 0.2s 0;
+  transition: opacity 0.2s 0.3s, transform 0.2s 0.3s, background 0.2s 0;
+  -webkit-transform: translateY(50px);
+  transform: translateY(50px);
+}
+.morph-button.contact-form-container.open .morph-content {
+  margin: -350px 0 0 -250px;
+  width: 500px;
+  height: 700px;
+}
+.morph-button.contact-form-container.open .morph-content > div {
+  height: 420px;
+  -webkit-transition: opacity 0.3s 0.3s;
+  transition: opacity 0.3s 0.3s;
+}
+.morph-button.contact-form-container.open .morph-content .form-content h2,
+.morph-button.contact-form-container.open .morph-content .form-content input,
+.morph-button.contact-form-container.open .morph-content .form-content button,
+.morph-button.contact-form-container.open .morph-content .form-content textarea,
+.morph-button.contact-form-container.open .morph-content .form-content .icon-close {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.noscroll {
+  overflow: hidden;
+}
+/*------------------------------------------------------------------
+____________________________________________________________________
+********************************************************************
+------------================== 11.IE9 ==================------------
+____________________________________________________________________
+********************************************************************
+-------------------------------------------------------------------*/
+.no-csstransitions body {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.no-csstransitions #home,
+.no-csstransitions #countdown {
+  padding-bottom: 3em;
+  position: relative;
+  top: inherit;
+  left: inherit;
+  display: block;
+  width: inherit;
+  overflow: hidden;
+  clip: none !important;
+}
+.no-csstransitions #home.inactive,
+.no-csstransitions #countdown.inactive {
+  cursor: default;
+}
+.no-csstransitions .morph-button {
+  margin: 0 1%;
+  float: left;
+  width: 48% !important;
+  padding: 0 !important;
+}
+.no-csstransitions .morph-button * {
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  transform: none !important;
+}
+.no-csstransitions .morph-button > button {
+  display: none;
+}
+.no-csstransitions .morph-button .morph-content .icon-close {
+  display: none;
+}
+.no-csstransitions .morph-button.subscribe-form-container .form-content h2,
+.no-csstransitions .morph-button.subscribe-form-container .form-content input,
+.no-csstransitions .morph-button.subscribe-form-container .form-content label,
+.no-csstransitions .morph-button.subscribe-form-container .form-content button {
+  opacity: 1 !important;
+}
+.no-csstransitions .morph-button.contact-form-container .morph-content {
+  padding: 0 !important;
+  height: 715px !important;
+}
+.no-csstransitions .morph-button.contact-form-container .form-content h2,
+.no-csstransitions .morph-button.contact-form-container .form-content input,
+.no-csstransitions .morph-button.contact-form-container .form-content textarea,
+.no-csstransitions .morph-button.contact-form-container .form-content button {
+  opacity: 1 !important;
+}
+.no-csstransitions .morph-button,
+.no-csstransitions .morph-button .morph-content,
+.no-csstransitions .morph-button .morph-content > div {
+  position: relative;
+  width: auto;
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+  top: auto;
+  left: auto;
+  -webkit-transform: none;
+  transform: none;
+  pointer-events: auto;
+}
+/*------------------------------------------------------------------
+____________________________________________________________________
+********************************************************************
+------------============= 12.Meida Queries =============------------
+____________________________________________________________________
+********************************************************************
+-------------------------------------------------------------------*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  section .contents {
+    padding-top: 34%;
+  }
+  section .contents h1 {
+    font-size: 62px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  section .contents {
+    padding-top: 22em;
+  }
+  section .contents h1 {
+    font-size: 56px;
+  }
+  #home .contents,
+  #countdown .contents {
+    padding-top: 32%;
+  }
+  #countdown .countdown-timer li span {
+    font-size: 56px;
+  }
+  #countdown .countdown-timer li p {
+    display: block;
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  section {
+    padding-bottom: 9em !important;
+    padding-top: 9em;
+  }
+  section .contents {
+    padding-top: 4em !important;
+  }
+  section .contents h1 {
+    font-size: 50px;
+  }
+  #main-header {
+    text-align: center;
+  }
+  #countdown .countdown-timer li {
+    margin-bottom: 2em;
+  }
+  #countdown .countdown-timer li span {
+    font-size: 50px;
+  }
+  #countdown .countdown-timer li p {
+    display: block;
+    font-size: 18px;
+  }
+  #countdown .socials {
+    width: 90%;
+    bottom: 1em;
+  }
+  #countdown .socials li {
+    margin: 0 0px 3px ;
+  }
+  .morph-button {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .morph-button.open .morph-content {
+    top: 0% !important;
+    left: 0% !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow-y: scroll !important;
+    -webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+    transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+  }
+}
+@media (max-height: 820px) {
+  section .contents {
+    padding-top: 13em !important;
+  }
+}
+@media (min-height: 1100px) {
+  section .contents {
+    padding-top: 36em !important;
+  }
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Image replacement
+ */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+}
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.clearfix:after {
+  clear: both;
+}
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+  *zoom: 1;
+}
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links for images, or javascript/internal links
+     */
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
